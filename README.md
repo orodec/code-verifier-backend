@@ -13,7 +13,11 @@
     - helmet
         most security querys
     - mongoose
-        for connect mongoo db    
+        ORM library for connect with mongoo db  
+    - swagger 
+        for get info endpoints in web  
+    - tsoa 
+        Allows our use swagger with typescript
 
 ### Dev Dependencies
 
@@ -23,6 +27,8 @@
     - eslint --> rules for clean code
     - jest --> for test code
     - server --> for serve test coverage on web
+    - ts-loader --> library for transpilation
+    - swagger --> for documentation ours api
 
 ### Scripts de npm
 

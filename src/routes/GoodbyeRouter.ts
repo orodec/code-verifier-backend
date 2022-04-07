@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express'
 import { GoodbyeController } from '../controller/GoodbyeController'
 import { LogInfo } from '../utils/logger'
+import { DateResponse } from '../controller/types/index'
 
 // Router from express
 const GoodbyeRouter = express.Router()
@@ -15,7 +16,7 @@ GoodbyeRouter.route('/')
     // Controller Instance to excute method
     const controller: GoodbyeController = new GoodbyeController()
     // Obtain Response
-    const response = await controller.getMessage(name)
+    const response: DateResponse = await controller.getMessage(name)
     // Send to the client the response
     return res.send(response)
   })
