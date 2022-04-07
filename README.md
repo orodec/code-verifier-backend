@@ -8,6 +8,12 @@
         works with an .env file that is best not uploaded to github.
     - nodemon
         Automatic restart server when it changes or have internal errors.
+    - cors
+        Allows query from url diferents from de url server
+    - helmet
+        most security querys
+    - mongoose
+        for connect mongoo db    
 
 ### Dev Dependencies
 

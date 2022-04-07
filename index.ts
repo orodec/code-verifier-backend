@@ -1,31 +1,18 @@
-import express, { Express, Request, Response } from 'express'
+import { LogSuccess, LogError } from './src/utils/logger'
 import dotenv from 'dotenv'
+import server from './src/server/index'
 
-// Create configuration the .env file
+// * Configuration the .env file
 dotenv.config()
 
-// Crete Express APP
-const app: Express = express()
 const port: string | number = process.env.PORT || 8000
 
-// Define the first Route of APP
-app.get('/', (req: Request, res: Response) => {
-  // Send Hello World
-  res.send('Welcome to App Restfull Express from Oscar')
+// * Execute SERVER
+server.listen(port, () => {
+  LogSuccess(`[Server On]: Running at http://localhost:${port}/api`)
 })
 
-app.get('/bye', (req: Request, res: Response) => {
-  const farewell = {
-    message: 'Goodbye, world'
-  }
-  res.send(farewell)
-})
-
-app.get('/hello', (req: Request, res: Response) => {
-  res.send('Hello World')
-})
-
-// Execute APP and listen in port
-app.listen(port, () => {
-  console.log(`Express Server: running at http://localhost:${port}`)
+// *  Control Server error
+server.on('error', (error) => {
+  LogError(`[Server Error]: ${error}`)
 })
