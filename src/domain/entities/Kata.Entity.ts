@@ -6,7 +6,7 @@ export const kataEntity = () => {
       name: String,
       description: String,
       level: Number,
-      user: { type: mongoose.Schema.Types.ObjectId },
+      user: { type: mongoose.Schema.Types.ObjectId, ref: 'Users' },
       date: { type: Date, default: Date.now },
       valoration: Number,
       chances: Number
